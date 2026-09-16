@@ -1,7 +1,7 @@
 import './App.css';
 import Task from './components/Task';
 import React, { useState } from 'react';
-
+import AddTaskForm from './components/Form';
 
 function App() {
 
@@ -12,6 +12,7 @@ function App() {
       { id: 3, title: "Tidy up", deadline: "Today", priority: "high", done: false  }
     ]
   });
+
 
     const doneHandler = (taskIndex) => {
     const tasks = [...taskState.tasks];
@@ -41,6 +42,8 @@ function App() {
             deleteTask = {() => deleteHandler(index)}
           />
   ))}
+        <AddTaskForm />
+
 
 
     </div>
