@@ -72,11 +72,11 @@ const AddTaskForm = (props) => {
   <Button
     type="submit"
     variant="contained"
-    color="primary"
+    color="success"
     sx={{
       m: 1,
       p: 1,
-      width: '95%'
+      width: '95%',
     }}
   >
     Add Task

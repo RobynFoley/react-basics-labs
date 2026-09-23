@@ -6,6 +6,8 @@ import CardContent from '@mui/material/CardContent';
 import CardHeader from '@mui/material/CardHeader';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
+import DeleteIcon from '@mui/icons-material/Delete';
+import CheckIcon from '@mui/icons-material/Check';
 
 
 const Task = (props) => {
@@ -16,8 +18,15 @@ const Task = (props) => {
 >
   <Card
     sx={{
-      backgroundColor: props.done ? 'lightgrey' : 'lightblue',
-      padding: '20px'
+      backgroundColor: props.done ? 'lightgrey' : '#f7d2e1',
+      padding: '20px',
+      boxShadow: '10px 10px',
+      transition: 'transform 0.2s ease',
+
+      '&:hover': {
+      transform: 'scale(1.05)',
+    },
+
     }}
   >
     <CardHeader
@@ -62,7 +71,7 @@ const Task = (props) => {
         variant="subtitle1"
         align="center"
         sx={{ fontStyle: 'italic',
-              backgroundColor: props.priority === "low" ? "green" : props.priority === "medium" ? "orange" : "red",
+              backgroundColor: props.priority === "low" ? "#d5f7d2" : props.priority === "medium" ? "#f7f5d2" : "#f7ccc1",
               marginTop: '1em'
          }}
       >
@@ -73,7 +82,7 @@ const Task = (props) => {
     <CardActions
       sx={{
         justifyContent: 'space-between',
-        padding: '20px'
+        padding: '15px'
       }}
     >
       <Button
@@ -83,6 +92,8 @@ const Task = (props) => {
         onClick={props.markDone}
       >
         Done
+        <CheckIcon />
+
       </Button>
 
       <Button
@@ -92,6 +103,7 @@ const Task = (props) => {
         onClick={props.deleteTask}
       >
         Delete
+        <DeleteIcon />
       </Button>
     </CardActions>
   </Card>

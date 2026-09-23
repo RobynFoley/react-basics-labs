@@ -82,7 +82,7 @@ function App() {
     align="center"
     gutterBottom
     sx={{
-      backgroundColor: 'gray',
+      backgroundColor: 'black',
       textAlign: 'center',
       color: 'white',
       padding: '20px',
@@ -101,6 +101,7 @@ function App() {
     spacing={5}
     alignItems="flex-start"
     justifyContent="center"
+    
   >
     {taskState.tasks.map((task, index) => (
       <Task
@@ -112,6 +113,7 @@ function App() {
         key={task.id}
         markDone={() => doneHandler(index)}
         deleteTask={() => deleteHandler(index)}
+        
       />
     ))}
   </Grid>
